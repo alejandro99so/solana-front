@@ -7,6 +7,22 @@ const { composePlugins, withNx } = require('@nx/next');
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'bacupsoccer.wordpress.com',
+        port: '',
+        pathname: '/wp-content/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.wearewater.org',
+        port: '',
+        pathname: '/wp-content/**',
+      },
+    ],
+  },
   webpack: (config) => {
     config.externals = [
       ...(config.externals || []),
